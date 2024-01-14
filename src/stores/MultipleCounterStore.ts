@@ -7,6 +7,7 @@ type Counter = {
 }
 
 const createMultipleCounter = () => {
+  console.log('createMultipleCounter!!!')
   let uid = 1
   const defaultTitle = 'new'
 

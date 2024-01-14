@@ -1,5 +1,5 @@
 <script lang="ts">
-  // import { multipleCounter } from '../stores/MultipleCounterStore'
+  // import { multipleCounter } from 'src/stores/MultipleCounterStore'
 </script>
 
 <div class="text-center">
