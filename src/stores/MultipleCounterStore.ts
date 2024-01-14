@@ -11,7 +11,7 @@ const createMultipleCounter = () => {
   let uid = 1
   const defaultTitle = 'new'
 
-  const { subscribe, update } = writable<Counter[]>([
+  const { subscribe, update, set } = writable<Counter[]>([
     {
       id: uid++,
       title: defaultTitle,
@@ -79,28 +79,14 @@ const createMultipleCounter = () => {
     })
   }
 
-  // カウンタータイトル変更
-  const changeCounterTitle = (targetCounter: Counter, newTitle: string) => {
-    update((multipleCounter) => {
-      return multipleCounter.map((counter) => {
-        return counter === targetCounter
-          ? {
-              ...counter,
-              title: newTitle,
-            }
-          : counter
-      })
-    })
-  }
-
   return {
     subscribe,
+    set,
     incrementCount,
     decrementCount,
     resetCount,
     deleteCounter,
     addCounter,
-    changeCounterTitle,
   }
 }
 
