@@ -14,6 +14,7 @@ export type MultipleCounterStore = {
   resetCount: (targetCounter: Counter) => void
   deleteCounter: (targetCounter: Counter) => void
   addCounter: () => void
+  changeCounterTitle: (targetCounter: Counter, newTitle: string) => void
 }
 
 const createMultipleCounterStore = (): MultipleCounterStore => {
@@ -88,6 +89,20 @@ const createMultipleCounterStore = (): MultipleCounterStore => {
     })
   }
 
+  // カウンタータイトル変更
+  const changeCounterTitle = (targetCounter: Counter, newTitle: string) => {
+    update((multipleCounter) => {
+      return multipleCounter.map((counter) => {
+        return counter === targetCounter
+          ? {
+              ...counter,
+              title: newTitle,
+            }
+          : counter
+      })
+    })
+  }
+
   return {
     subscribe,
     set,
@@ -96,6 +111,7 @@ const createMultipleCounterStore = (): MultipleCounterStore => {
     resetCount,
     deleteCounter,
     addCounter,
+    changeCounterTitle,
   }
 }
 
