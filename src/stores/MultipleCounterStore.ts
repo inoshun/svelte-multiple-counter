@@ -1,13 +1,22 @@
-import { writable } from 'svelte/store'
+import { writable, type Writable } from 'svelte/store'
 
-type Counter = {
+export type Counter = {
   id: number
   title: string
   count: number
 }
 
-const createMultipleCounter = () => {
-  console.log('createMultipleCounter!!!')
+export type MultipleCounterStore = {
+  subscribe: Writable<Counter[]>['subscribe']
+  set: Writable<Counter[]>['set']
+  incrementCount: (targetCounter: Counter) => void
+  decrementCount: (targetCounter: Counter) => void
+  resetCount: (targetCounter: Counter) => void
+  deleteCounter: (targetCounter: Counter) => void
+  addCounter: () => void
+}
+
+const createMultipleCounterStore = (): MultipleCounterStore => {
   let uid = 1
   const defaultTitle = 'new'
 
@@ -90,4 +99,4 @@ const createMultipleCounter = () => {
   }
 }
 
-export const multipleCounter = createMultipleCounter()
+export const multipleCounterStore = createMultipleCounterStore()
