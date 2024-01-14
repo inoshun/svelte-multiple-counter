@@ -4,6 +4,6 @@
 </script>
 
 <p>
-  sum of count:&nbsp;
-  {counters.reduce((accumulator, currentValue) => accumulator + currentValue.count, 0)}
+  <span>sum of count: </span>
+  <span>{counters.reduce((accumulator, currentValue) => accumulator + currentValue.count, 0)}</span>
 </p>

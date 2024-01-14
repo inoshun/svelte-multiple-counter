@@ -4,10 +4,10 @@
 </script>
 
 <p>
-  title list:&nbsp;
+  <span>title list: </span>
   {#each counters as counter (counter.id)}
-    <span class="mr-1 after:content-[','] last-of-type:mr-0 last-of-type:after:content-none">
-      {counter.title}
-    </span>
+    <span class="mr-1 after:content-[','] last-of-type:mr-0 last-of-type:after:content-none"
+      >{counter.title}</span
+    >
   {/each}
 </p>

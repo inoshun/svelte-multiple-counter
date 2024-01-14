@@ -19,9 +19,9 @@
     <button type="button" class="btn bg-red-500 rounded-l" on:click={onClickIncrement}>+</button>
     <button type="button" class="btn bg-blue-500" on:click={onClickDecrement}>-</button>
     <button type="button" class="btn bg-yellow-500 rounded-r" on:click={onClickReset}>0</button>
-    <button class="flex justify-between items-center text-gray-500 px-4" on:click={onClickDelete}>
-      x
-    </button>
+    <button class="flex justify-between items-center text-gray-500 px-4" on:click={onClickDelete}
+      >x</button
+    >
   </div>
 </div>
 

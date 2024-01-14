@@ -4,6 +4,5 @@
   "tabWidth": 2,
   "semi": false,
   "singleQuote": true,
-  "htmlWhitespaceSensitivity": "ignore",
   "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
 }
